@@ -9,3 +9,5 @@ Run with `./scrape.py`. If successful, an ICS file will be generated in the same
 
 ### Disclaimer
 This software is provided as-is without any warranties or support.
+
+![Feb Club Logo](https://github.com/derekjobst/febclub/raw/1.0/logo.png)
