@@ -16,8 +16,6 @@ https://docs.python.org/2/library/argparse.html
 
 import argparse
 import requests
-import pprint
-import re
 import dateparser as dp
 from datetime import timedelta
 import pytz
@@ -54,25 +52,18 @@ def main(args):
         if end_date < start_date:
             end_date = end_date + timedelta(days=1)
 
-        # Adjust timezone hack
-        # start_date += timedelta(hours=5)
-        # end_date += timedelta(hours=5)
         start_date = pytz.timezone('US/Eastern').localize(start_date)
         end_date = pytz.timezone('US/Eastern').localize(end_date)
 
         description = paragraphs[1].encode('ascii', errors='backslashreplace')
 
-        print "Times: {} to {}".format(start_date, end_date)
-        # Create Event
         event = Event()
-
         event.name = link.h1.text
         event.begin = start_date.isoformat()
         event.end = end_date.isoformat()
         event.description = u"{}\n{}\n\n{}".format(paragraphs[0], paragraphs[4], description)
         event.location = paragraphs[3]
 
-        # pp.pprint(obj)
         cal.events.append(event)
         print "Added event {}".format(link.h1.text)
 
