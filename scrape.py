@@ -34,7 +34,6 @@ def setup():
 
 
 def main(args):
-    pp = pprint.PrettyPrinter(indent=4)
     res = requests.get('http://www.febclub2017.com/events')
     print "Encoding: {}".format(res.encoding)
     soup = BeautifulSoup(res.text, 'html.parser')
