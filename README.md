@@ -1,5 +1,5 @@
-# febclub
-FebClub 2017 web parser and ICS generator
+# UPenn Feb Club 2017 iCal scraper
+[FebClub 2017](http://febclub2017.com/events) web parser and ICS generator.
 
 ## Development
 Use PIP to install required libraries.
